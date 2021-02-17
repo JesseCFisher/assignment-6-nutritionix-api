@@ -22,7 +22,7 @@ class MealsController < ApplicationController
   # POST /meals or /meals.json
   def create
     @meal = Meal.new(meal_params)
-
+    @meal.nutritionix = @meal.nutritionix_query
     respond_to do |format|
       if @meal.save
         format.html { redirect_to @meal, notice: "Meal was successfully created." }
@@ -64,6 +64,6 @@ class MealsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def meal_params
-      params.require(:meal).permit(:name)
+      params.require(:meal).permit(:name, :nutritionix, :consumed_at)
     end
 end

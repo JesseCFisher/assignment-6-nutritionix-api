@@ -10,12 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_16_135555) do
+ActiveRecord::Schema.define(version: 2021_02_17_155309) do
 
   create_table "meals", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "calories"
+    t.string "nutritionix"
+    t.datetime "consumed_at"
   end
 
 end

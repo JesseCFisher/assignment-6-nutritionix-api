@@ -4,6 +4,14 @@
   %b Name:
   = @meal.name
 
-= link_to 'Edit', edit_meal_path(@meal)
-\|
-= link_to 'Back', meals_path
+%p
+  %b Calories:
+  = @meal.calories
+
+%p
+  %b Consumed at:
+  = @meal.consumed_at
+
+-# %p
+  %b Nutritionix Query Response:
+  = @meal.nutritionix
