@@ -1,5 +1,15 @@
+# Solution Notes
 
-Assignment #6: Nutritionix API
+A big limitation is the `calories` can not be changed. When a meal is
+created, the `calories` are calculated based on Nutritionix API data. If
+a meal is edited, the calories are unchanged.
+
+Two improvent ideas:
+
+  1. Create a `calories` column in the Meal table, to allow a user input of calories for a meal.
+  2. In the Meal controller `update` method, call the Nutritionix API to re-calculate calories when the meal is changed.
+
+# Assignment #6: Nutritionix API
 
 Use nutrionix API to allow the user to estimate how many calories a food item is. They enter a food - for example, nachos. Save user entries to the database and display them in a list view along with caloric estimate, along with the datetime they ate the meal.
 
@@ -32,7 +42,7 @@ x-app-key: Your app key issued from developer.nutritionix.com)
 x-remote-user-id:  A unique identifier to represent the end-user who is accessing the Nutritionix API.  If in development mode, set this to 0.  This is used for billing purposes to determine the number of active users your app has.
 
 
-Assignment #7: Users with devise gem 
+# Assignment #7: Users with devise gem 
 
 Install the gem 'devise' into your rails application. Add a logged-in user to the nutrition api you just made. Only display the meals/caloric values for the currently logged in user. 
 
